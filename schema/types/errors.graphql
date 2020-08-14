@@ -1,0 +1,7 @@
+interface Error {
+    message: String!
+}
+
+type InternalServerError implements Error {
+    message: String!
+}    

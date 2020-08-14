@@ -1,0 +1,39 @@
+# .gqlgen.yml example
+#
+# Refer to https://gqlgen.com/config/
+# for detailed .gqlgen.yml documentation.
+
+schema:
+  - "schema/**/*.graphql"
+  -
+exec:
+  filename: graph/generated/generated.go
+  package: generated
+
+resolver:
+  filename: resolvers/resolver.go
+  package: resolvers
+  type: Resolver
+
+model:
+  filename: models/models_gen.go
+  package: models
+
+autobind:
+  - "test_gqlgen/models"
+
+models:
+  Timestamp:
+    model: test_gqlgen/models.Timestamp
+  Test:
+    fields:
+      g:
+        resolver: true
+      h:
+        resolver: true
+      n:
+        resolver: true
+  GMetric:
+    fields:
+      items:
+        resolver: true

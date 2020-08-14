@@ -1,0 +1,4 @@
+type Query {
+    test: TestResult!
+    tests: TestsResult!
+}

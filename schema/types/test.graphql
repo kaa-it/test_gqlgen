@@ -1,0 +1,26 @@
+type Test @goModel(model: "test_gqlgen/models.Test") {
+    a: Int!
+    b: Int!
+    c: Int!
+    d: Int!
+    g: G!
+    h: G!
+    n: GMetric!
+}
+
+type G {
+    a: Int!
+}
+
+type GMetric @goModel(model: "test_gqlgen/models.GMetric") {
+    items: [G!]!
+    count: Int!
+}
+
+type Tests {
+    items: [Test!]!
+}
+
+union TestResult = Test | InternalServerError
+
+union TestsResult = Tests | InternalServerError
